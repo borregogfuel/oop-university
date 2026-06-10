@@ -1,0 +1,31 @@
+#include "../include/instructor.hpp"
+
+string instructor::get_name(){
+    return name;
+}
+
+string instructor::get_payroll_id(){
+    return payroll_id;
+}
+
+string instructor::get_department(){
+    return department;
+}
+
+int instructor::get_course_count(){
+    return course_count;
+}
+
+bool instructor::operator<(instructor other){
+    return name < other.name;
+}
+
+bool instructor::operator>(instructor other){
+    return name > other.name;
+}
+
+bool instructor::operator==(instructor other){
+    return name == other.name;
+}
+
+instructor::~instructor() {}
