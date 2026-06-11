@@ -44,7 +44,10 @@ class scheduler {
         bool all_professors_meet_minimum();
         instructor** get_underassigned_professors(int& count);
 
-        void run_cli();
+        course* find_course(string course_code);
+        instructor* find_instructor(string payroll_id);
+        room* find_room(string room_number);
+        void list_courses();
 };
 
 #endif

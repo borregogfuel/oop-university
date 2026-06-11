@@ -156,3 +156,56 @@ instructor** scheduler::get_underassigned_professors(int& count) {
     }
     return result;
 }
+
+course* scheduler::find_course(string course_code) {
+    for (int i = 0; i < course_count; i++) {
+        if (courses[i]->get_course_code() == course_code) {
+            return courses[i];
+        }
+    }
+    return nullptr;
+}
+
+instructor* scheduler::find_instructor(string payroll_id) {
+    for (int i = 0; i < instructor_count; i++) {
+        if (instructors[i]->get_payroll_id() == payroll_id) {
+            return instructors[i];
+        }
+    }
+    return nullptr;
+}
+
+room* scheduler::find_room(string room_number) {
+    for (int i = 0; i < room_count; i++) {
+        if (rooms[i]->get_room_number() == room_number) {
+            return rooms[i];
+        }
+    }
+    return nullptr;
+}
+
+void scheduler::list_courses() {
+    if (course_count == 0) {
+        cout << "No courses registered." << endl;
+        return;
+    }
+    for (int i = 0; i < course_count; i++) {
+        course* c = courses[i];
+        cout << "\n" << c->get_course_code() << " - " << c->get_course_name();
+        cout << "\n  Department: " << c->get_department();
+        cout << "\n  Enrollment: " << c->get_enrollment();
+        cout << "\n  Schedule: " << c->get_schedule().get_day();
+        cout << " " << c->get_schedule().get_start() << " - " << c->get_schedule().get_end();
+        if (c->get_instructor() != nullptr) {
+            cout << "\n  Instructor: " << c->get_instructor()->get_name();
+        } else {
+            cout << "\n  Instructor: unassigned";
+        }
+        if (c->get_room() != nullptr) {
+            cout << "\n  Room: " << c->get_room()->get_room_number();
+        } else {
+            cout << "\n  Room: unassigned";
+        }
+        cout << endl;
+    }
+}
