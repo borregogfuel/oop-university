@@ -36,4 +36,12 @@ bool instructor::operator==(const instructor& other){
     return name == other.name;
 }
 
+void instructor::add_course() {
+    course_count++;
+}
+
+void instructor::remove_course() {
+    course_count--;
+}
+
 instructor::~instructor() {}
