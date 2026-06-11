@@ -1,6 +1,7 @@
 #include "../include/laboratory.h"
 
-laboratory::laboratory(string building, string room_number, int capacity, int equipment_max) {
+laboratory::laboratory(string building, string room_number, int capacity, int equipment_max)
+    : room(building, room_number, capacity) {
     this->equipment_count = 0;
     this->equipment_max = equipment_max;
     this->equipment = new string[equipment_max];
