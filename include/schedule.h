@@ -12,6 +12,7 @@ class schedule {
 
     public:
         schedule(string day_of_week, string start_time, string end_time);
+        schedule();
         string get_day();
         string get_start();
         string get_end();

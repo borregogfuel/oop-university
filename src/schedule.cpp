@@ -6,6 +6,12 @@ schedule::schedule(string day_of_week, string start_time, string end_time) {
     this->end_time = end_time;
 }
 
+schedule::schedule() {
+    this->day_of_week = "";
+    this->start_time = "";
+    this->end_time = "";
+}
+
 string schedule::get_day(){
     return day_of_week;
 }

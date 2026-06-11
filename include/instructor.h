@@ -29,6 +29,9 @@ class instructor {
         virtual string get_type() = 0;
 
         virtual ~instructor() = 0;
+
+        void add_course();
+        void remove_course();
         
 
 
