@@ -16,15 +16,15 @@ int instructor::get_course_count(){
     return course_count;
 }
 
-bool instructor::operator<(instructor other){
+bool instructor::operator<(const instructor& other){
     return name < other.name;
 }
 
-bool instructor::operator>(instructor other){
+bool instructor::operator>(const instructor& other){
     return name > other.name;
 }
 
-bool instructor::operator==(instructor other){
+bool instructor::operator==(const instructor& other){
     return name == other.name;
 }
 

@@ -9,6 +9,8 @@ class instructor {
         string name;
         string payroll_id;
         string department;
+
+    protected:
         int course_count;
     
     public:
@@ -16,9 +18,9 @@ class instructor {
         string get_payroll_id();
         string get_department();
         int get_course_count();
-        bool operator<(instructor other);
-        bool operator>(instructor other);
-        bool operator==(instructor other);
+        bool operator<(const instructor& other);
+        bool operator>(const instructor& other);
+        bool operator==(const instructor& other);
 
         virtual int get_max_courses() = 0;
         virtual string get_type() = 0;
