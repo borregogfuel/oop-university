@@ -1,4 +1,12 @@
-#include "../include/instructor.hpp"
+#include "../include/instructor.h"
+
+instructor::instructor(string name, string payroll_id, string department) {
+    this->name = name;
+    this->payroll_id = payroll_id;
+    this->department = department;
+    this->course_count = 0;
+}
+
 
 string instructor::get_name(){
     return name;

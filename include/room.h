@@ -7,12 +7,13 @@ using namespace std;
 class room{
     private:
         string building;
-        int room_number;
+        string room_number;
         int capacity;
 
     public:
+        room(string building, string room_number, int capacity);
         string get_building();
-        int get_room_number();
+        string get_room_number();
         int get_capacity();
 
         virtual string get_type() = 0;

@@ -14,6 +14,9 @@ class instructor {
         int course_count;
     
     public:
+
+        instructor(string name, string payroll_id, string department);
+
         string get_name();
         string get_payroll_id();
         string get_department();

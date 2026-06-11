@@ -1,10 +1,16 @@
-#include "../include/room.hpp"
+#include "../include/room.h"
+
+room::room(string building, string room_number, int capacity) {
+    this->building = building;
+    this->room_number = room_number;
+    this->capacity = capacity;
+}
 
 string room::get_building(){
     return building;
 }
 
-int room::get_room_number(){
+string room::get_room_number(){
     return room_number;
 }
 

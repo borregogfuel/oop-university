@@ -1,6 +1,8 @@
 #include <climits>
-#include "../include/professor.hpp"
+#include "../include/professor.h"
 
+professor::professor(string name, string payroll_id, string department)
+    : instructor(name, payroll_id, department) {}
 
 string professor::get_type(){
     return "professor";

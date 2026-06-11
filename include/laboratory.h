@@ -1,7 +1,7 @@
 #ifndef LABORATORY_HPP
 #define LABORATORY_HPP
 
-#include "room.hpp"
+#include "room.h"
 
 class laboratory : public room {
     private:
@@ -10,6 +10,7 @@ class laboratory : public room {
         int equipment_max;
 
     public:
+        laboratory(string building, string room_number, int capacity, int equipment_max);
         string get_type() override;
         string* get_equipment();
         int get_equipment_count();

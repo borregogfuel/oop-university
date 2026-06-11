@@ -1,4 +1,10 @@
-#include "../include/laboratory.hpp"
+#include "../include/laboratory.h"
+
+laboratory::laboratory(string building, string room_number, int capacity, int equipment_max) {
+    this->equipment_count = 0;
+    this->equipment_max = equipment_max;
+    this->equipment = new string[equipment_max];
+}
 
 string laboratory::get_type(){
     return "laboratory";
