@@ -7,7 +7,7 @@ class lecturer : public instructor {
     public:
         lecturer(string name, string payroll_id, string department);
         int get_max_courses() override;
-        string get_type() override;
+        string get_type() const override;
         bool is_at_limit();
 };
 

@@ -3,7 +3,7 @@
 lecturer::lecturer(string name, string payroll_id, string department)
     : instructor(name, payroll_id, department) {}
 
-string lecturer::get_type(){
+string lecturer::get_type() const {
     return "lecturer";
 }
 

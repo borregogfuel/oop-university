@@ -4,7 +4,7 @@
 professor::professor(string name, string payroll_id, string department)
     : instructor(name, payroll_id, department) {}
 
-string professor::get_type(){
+string professor::get_type() const {
     return "professor";
 }
 

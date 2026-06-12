@@ -26,7 +26,7 @@ class instructor {
         bool operator==(const instructor& other);
 
         virtual int get_max_courses() = 0;
-        virtual string get_type() = 0;
+        virtual string get_type() const = 0;
 
         virtual ~instructor() = 0;
 
