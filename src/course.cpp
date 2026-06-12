@@ -46,6 +46,7 @@ room* course::get_room() {
 
 bool course::assign_instructor(instructor* i) {
     if (i == nullptr) {
+        instructor_ref = nullopt;  
         return false;
     }
     instructor_ref = i;

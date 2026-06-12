@@ -89,23 +89,33 @@ bool scheduler::check_capacity(course* c, room* r) {
 }
 
 bool scheduler::assign_instructor_to_course(course* c, instructor* i) {
-    if (i == nullptr or c == nullptr) return false;
+    if (i == nullptr || c == nullptr) {
+        cout << "Error: instructor or course is null." << endl;
+        return false;
+    }
 
     instructor* current = c->get_instructor();
     if (current != nullptr) {
         if (*i > *current) {
             remove_instructor_from_course(c);
         } else {
+            cout << "Error: current instructor has higher priority." << endl;
             return false;
         }
     }
 
     if (i->get_type() == "lecturer") {
         lecturer* l = (lecturer*)i;
-        if (l->is_at_limit()) return false;
+        if (l->is_at_limit()) {
+            cout << "Error: lecturer has reached course limit of 3." << endl;
+            return false;
+        }
     }
 
-    if (check_double_booking_instructor(i, c->get_schedule())) return false;
+    if (check_double_booking_instructor(i, c->get_schedule())) {
+        cout << "Error: instructor has a scheduling conflict." << endl;
+        return false;
+    }
 
     c->assign_instructor(i);
     i->add_course();

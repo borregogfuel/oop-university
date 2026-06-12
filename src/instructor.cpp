@@ -25,15 +25,30 @@ int instructor::get_course_count(){
 }
 
 bool instructor::operator<(const instructor& other){
-    return name < other.name;
+    if(get_type() == "lecturer" && other.get_type() == "professor"){
+        return true;
+    }
+    if(get_type() == "professor" && other.get_type() == "lecturer"){
+        return false;
+    }
+
+    return department < other.department;
 }
 
 bool instructor::operator>(const instructor& other){
-    return name > other.name;
+    if(get_type() == "lecturer" && other.get_type() == "professor"){
+        return false;
+    }
+
+    if(get_type() == "professor" && other.get_type() == "lecturer"){
+        return true;
+    }
+
+    return department > other.department;
 }
 
 bool instructor::operator==(const instructor& other){
-    return name == other.name;
+    return get_type() == other.get_type() && department == other.department;
 }
 
 void instructor::add_course() {
