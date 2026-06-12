@@ -89,7 +89,7 @@ bool scheduler::check_capacity(course* c, room* r) {
 }
 
 bool scheduler::assign_instructor_to_course(course* c, instructor* i) {
-    if (i == nullptr || c == nullptr) {
+    if (i == nullptr or c == nullptr) {
         cout << "Error: instructor or course is null." << endl;
         return false;
     }
